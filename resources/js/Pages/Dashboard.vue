@@ -31,7 +31,7 @@ const props = usePage().props;
             </div>
         </div>
 
-        <pre class="text-white">
+        <pre class="dark:text-white">
             {{ props }}
         </pre>
     </AuthenticatedLayout>
