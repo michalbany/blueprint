@@ -12,8 +12,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        Workspace::switch(1);
+        // Workspace::switch(1);
 
-        return Inertia::render('Dashboard');
+        return Inertia::render('Dashboard', [
+            // 'projects' => Workspace::current()->projects,
+        ]);
     }
 }

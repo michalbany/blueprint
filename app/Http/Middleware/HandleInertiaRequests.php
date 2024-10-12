@@ -34,7 +34,7 @@ class HandleInertiaRequests extends Middleware
             ...parent::share($request),
             'auth' => [
                 'user' => $request->user()->load('workspaces'),
-                'workspace' => Workspace::current(),
+                'workspace' => fn () => Workspace::current(),
             ],
         ];
     }
