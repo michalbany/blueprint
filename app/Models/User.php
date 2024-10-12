@@ -45,4 +45,22 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function workspaces()
+    {
+        return $this->belongsToMany(Workspace::class, 'workspace_users')
+            ->using(WorkspaceUser::class)
+            ->withPivot('role');
+    }
+
+    public function invitations()
+    {
+        return $this->hasMany(Invitation::class);
+    }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class)->using(ProjectUser::class);
+    }
+
 }

@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, usePage } from '@inertiajs/vue3';
+
+const props = usePage().props;
+
+
 </script>
 
 <template>
@@ -26,5 +30,9 @@ import { Head } from '@inertiajs/vue3';
                 </div>
             </div>
         </div>
+
+        <pre class="text-white">
+            {{ props }}
+        </pre>
     </AuthenticatedLayout>
 </template>
